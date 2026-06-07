@@ -13,7 +13,7 @@ import 'package:pawpatrol/features/onboarding%20screens/container/onboarding_scr
 
 class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutesPaths.home,
+    initialLocation: AppRoutesPaths.splash,
 
     routes: [
       GoRoute(
