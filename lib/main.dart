@@ -35,3 +35,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+/* 
+Only blocs that are used across multiple screens should be provided here. Otherwise, 
+provide the bloc in the screen's container widget. 
+*/

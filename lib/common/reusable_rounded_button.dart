@@ -6,12 +6,16 @@ class ReusableRoundedButton extends StatelessWidget {
   final IconData icon;
   final double size;
   final Color color;
+  final Color? borderColor;
+  final Color? backgroundColor;
   const ReusableRoundedButton({
     super.key,
     this.onPressed,
     required this.icon,
     this.size = 20.0,
     required this.color,
+    this.borderColor,
+    this.backgroundColor,
   });
 
   @override
@@ -29,9 +33,9 @@ class ReusableRoundedButton extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
 
           decoration: BoxDecoration(
-            color: ext.glassBackground,
+            color: backgroundColor ?? ext.glassBackground,
             shape: BoxShape.circle,
-            border: Border.all(color: ext.glassBorder, width: 2.0),
+            border: Border.all(color: borderColor ?? ext.glassBorder, width: 2.0),
           ),
 
           child: Icon(icon, size: size, color: color),
