@@ -13,11 +13,11 @@ class ResubaleProductsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Paws down, these are popular",
+          "🐾 down, \nthese are popular",
           style: theme.textTheme.headlineSmall!.copyWith(
             fontWeight: FontWeight.w800,
 
-            color:  theme.colorScheme.surface
+            color:  theme.colorScheme.primary
           ),
         ),
         ListView.builder(
