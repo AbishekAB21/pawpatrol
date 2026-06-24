@@ -6,17 +6,17 @@ class AppFontstyles {
   // HEADINGS
   // =========================
 
-  static final headingLarge = GoogleFonts.inter(
+  static final headingLarge = GoogleFonts.poppins(
     fontSize: 32,
     fontWeight: FontWeight.bold,
   );
 
-  static final headingMedium = GoogleFonts.inter(
+  static final headingMedium = GoogleFonts.poppins(
     fontSize: 24,
     fontWeight: FontWeight.w600,
   );
 
-  static final headingSmall = GoogleFonts.inter(
+  static final headingSmall = GoogleFonts.poppins(
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
@@ -25,17 +25,17 @@ class AppFontstyles {
   // BODY
   // =========================
 
-  static final bodyLarge = GoogleFonts.inter(
+  static final bodyLarge = GoogleFonts.poppins(
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
 
-  static final bodyMedium = GoogleFonts.inter(
+  static final bodyMedium = GoogleFonts.poppins(
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
 
-  static final bodySmall = GoogleFonts.inter(
+  static final bodySmall = GoogleFonts.poppins(
     fontSize: 12,
     fontWeight: FontWeight.w400,
   );
@@ -44,7 +44,7 @@ class AppFontstyles {
   // BUTTON
   // =========================
 
-  static final buttonText = GoogleFonts.inter(
+  static final buttonText = GoogleFonts.poppins(
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );

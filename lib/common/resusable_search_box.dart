@@ -42,7 +42,7 @@ class ResusableSearchBox extends StatelessWidget {
                 suffixIcon: suffixIcon,
                 filled: true,
                 fillColor: theme.colorScheme.onSurface.withValues(
-                  alpha: 0.15,
+                  alpha: 0.85,
                 ), // more transparent fill
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30.0),
