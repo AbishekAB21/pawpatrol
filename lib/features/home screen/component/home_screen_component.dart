@@ -161,7 +161,7 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
                             ),
                             border: Border(
                               bottom: BorderSide(
-                                color: Colors.white.withValues(
+                                color: theme.colorScheme.onSurface.withValues(
                                   alpha: 0.15 * progress,
                                 ),
                               ),
