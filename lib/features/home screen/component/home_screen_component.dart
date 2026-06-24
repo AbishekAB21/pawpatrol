@@ -30,12 +30,6 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
   double _headerHeight = 238.0;
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _measureHeader());
-  }
-
-  @override
   void dispose() {
     _scrollController.dispose();
     super.dispose();
@@ -52,16 +46,15 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
     }
   }
 
-  // TODO: wire this up to whatever data sources back the home screen
-  // (product lists, sale section, etc.) once those are fetched from
-  // an API/repository rather than being static widgets.
-  Future<void> _handleRefresh() async {
-    await Future.delayed(const Duration(seconds: 1));
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
+    // Re-measure after every build (not just the first one) so any
+    // change to HomeHeaderSection's padding/content — including
+    // changes picked up via hot reload — is reflected immediately
+    // instead of relying on a stale measurement from initState.
+    WidgetsBinding.instance.addPostFrameCallback((_) => _measureHeader());
 
     return Scaffold(
       body: Container(
@@ -111,6 +104,7 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
                           children: [
+                            SizedBox(height: 20.0,),
                             const ResubaleProductsSection(),
 
                             const SizedBox(height: 20),
@@ -222,5 +216,12 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
         ),
       ),
     );
+  }
+
+  // TODO: wire this up to whatever data sources back the home screen
+  // (product lists, sale section, etc.) once those are fetched from
+  // an API/repository rather than being static widgets.
+  Future<void> _handleRefresh() async {
+    await Future.delayed(const Duration(seconds: 1));
   }
 }

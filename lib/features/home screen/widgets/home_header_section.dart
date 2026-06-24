@@ -19,9 +19,9 @@ class HomeHeaderSection extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
           10,
-          60,
           10,
-          20,
+          10,
+          8,
         ),
         child: Column(
           children: [
@@ -60,7 +60,7 @@ class HomeHeaderSection extends StatelessWidget {
                               .copyWith(
                                 color: theme.colorScheme.onSurface,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 18,
+                                fontSize: 16,
                               ),
                         ),
 
@@ -70,7 +70,7 @@ class HomeHeaderSection extends StatelessWidget {
                               .copyWith(
                                 color: theme.colorScheme.onSurface,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 18,
+                                fontSize: 16,
                               ),
                         ),
                       ],
