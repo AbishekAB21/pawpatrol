@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pawpatrol/common/resubale_products_section.dart';
 import 'package:pawpatrol/common/resusable_search_box.dart';
 import 'package:pawpatrol/common/reusable_rounded_button.dart';
-import 'package:pawpatrol/features/home%20screen/core/category_tab_data.dart';
+import 'package:pawpatrol/features/home%20screen/core/data/category_tab_data.dart';
 import 'package:pawpatrol/features/home%20screen/widgets/category_tab.dart';
 import 'package:pawpatrol/features/home%20screen/widgets/header_profile_icon_section.dart';
 
@@ -23,7 +23,7 @@ class HomeScreenComponent extends StatelessWidget {
             end: Alignment.bottomCenter,
             colors: [
               theme.primaryColor,
-              theme.colorScheme.secondary.withValues(alpha: 0.8),
+              theme.colorScheme.secondary.withValues(alpha: 0.9),
               theme.colorScheme.secondary,
             ],
             stops: [0.0, 0.4, 1.0],
@@ -134,11 +134,8 @@ class HomeScreenComponent extends StatelessWidget {
               SizedBox(height: 20.0),
               const ResubaleProductsSection(),
 
-              // Products on sale section
-
-              // New arrivals section
-
-              // Recommended products section
+              // Products on sale section (The 1 Rupee store)
+             
 
               // Specific product section (e.g., Accesories, Food, Medicine, etc.)
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawpatrol/utils/fonts/app_typography.dart';
 import 'package:pawpatrol/utils/theme/app_colors.dart';
 import 'package:pawpatrol/utils/theme/app_theme_extension.dart';
 
@@ -43,7 +44,7 @@ class AppTheme {
 
     dividerColor: AppColors.dividerDark,
 
-    //textTheme: AppTypography.darkTextTheme,
+    textTheme: AppTypography.darkTextTheme,
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: AppColors.darkSurface,
@@ -90,7 +91,7 @@ class AppTheme {
 
     cardColor: AppColors.lightCard,
 
-    //textTheme: AppTypography.lightTextTheme,
+    textTheme: AppTypography.lightTextTheme,
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: AppColors.white,
