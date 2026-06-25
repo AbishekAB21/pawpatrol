@@ -23,4 +23,7 @@ class AppStrings {
   static const String emailHint = "Email";
   static const String passwordHint = "Password";
   static const String or = "OR";
+  static const String orderHistory = "Order History";
+  static const String searchYourBowOrders = "Search your bow-bow orders";
+  static const String searchYourMeowOrders = "Search your Meow-Meow orders";
 }

@@ -33,7 +33,9 @@ class ResusableSearchBox extends StatelessWidget {
               ],
             ),
             child: TextField(
+              
               decoration: InputDecoration(
+                isDense: true,
                 hintText: hintText,
                 hintStyle: theme.textTheme.bodyMedium!.copyWith(
                   color: theme.colorScheme.surface,

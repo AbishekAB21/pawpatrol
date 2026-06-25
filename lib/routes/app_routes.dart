@@ -12,45 +12,85 @@ import 'package:pawpatrol/features/splash%20screen/container/splash_screen_conta
 import 'package:pawpatrol/features/onboarding%20screens/container/onboarding_screen_container.dart';
 
 class AppRouter {
+  static CustomTransitionPage<void> _fadePage({
+    required LocalKey key,
+    required Widget child,
+  }) {
+    return CustomTransitionPage(
+      key: key,
+      child: child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return FadeTransition(opacity: animation, child: child);
+      },
+      transitionDuration: const Duration(milliseconds: 200),
+    );
+  }
+
   static final GoRouter router = GoRouter(
     initialLocation: AppRoutesPaths.splash,
     routes: [
       GoRoute(
         path: AppRoutesPaths.splash,
-        builder: (context, state) => const SplashScreenContainer(),
+        pageBuilder: (context, state) =>
+            _fadePage(key: state.pageKey, child: const SplashScreenContainer()),
       ),
       GoRoute(
         path: AppRoutesPaths.onboarding,
-        builder: (context, state) => const OnboardingScreenContainer(),
+        pageBuilder: (context, state) => _fadePage(
+          key: state.pageKey,
+          child: const OnboardingScreenContainer(),
+        ),
       ),
       GoRoute(
         path: AppRoutesPaths.login,
-        builder: (context, state) => const SigninContainer(),
+        pageBuilder: (context, state) =>
+            _fadePage(key: state.pageKey, child: const SigninContainer()),
       ),
+
       GoRoute(
         path: AppRoutesPaths.signup,
-        builder: (context, state) => const SignupScreenContainer(),
+        pageBuilder: (context, state) =>
+            _fadePage(key: state.pageKey, child: const SignupScreenContainer()),
       ),
 
       // Shell wraps all main app tabs — nav bar stays alive across them
       ShellRoute(
-        builder: (context, state, child) => MainShell(child: child),
+        pageBuilder: (context, state, child) => CustomTransitionPage(
+          key: state.pageKey,
+          child: MainShell(child: child),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+          transitionDuration: const Duration(milliseconds: 200),
+        ),
         routes: [
           GoRoute(
             path: AppRoutesPaths.home,
-            builder: (context, state) => const HomeScreenContainer(),
+            pageBuilder: (context, state) => _fadePage(
+              key: state.pageKey,
+              child: const HomeScreenContainer(),
+            ),
           ),
           GoRoute(
             path: AppRoutesPaths.orders,
-            builder: (context, state) => const OrderScreenContainer(),
+            pageBuilder: (context, state) => _fadePage(
+              key: state.pageKey,
+              child: const OrderScreenContainer(),
+            ),
           ),
           GoRoute(
             path: AppRoutesPaths.wishlist,
-            builder: (context, state) => const WishlistScreenContainer(),
+            pageBuilder: (context, state) => _fadePage(
+              key: state.pageKey,
+              child: const WishlistScreenContainer(),
+            ),
           ),
           GoRoute(
             path: AppRoutesPaths.profile,
-            builder: (context, state) => const ProfileScreenContainer(),
+            pageBuilder: (context, state) => _fadePage(
+              key: state.pageKey,
+              child: const ProfileScreenContainer(),
+            ),
           ),
         ],
       ),

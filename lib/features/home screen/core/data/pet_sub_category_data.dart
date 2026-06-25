@@ -4,7 +4,7 @@ class PetCategoryData {
   static const List<PetCategory> categories = [
     PetCategory(
       id: 'cat',
-      title: 'Meow Stuff',
+      title: 'Me-Wow Stuff',
       emoji: '🐱',
       subCategories: [
         PetSubCategory(
