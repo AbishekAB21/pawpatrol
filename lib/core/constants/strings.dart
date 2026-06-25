@@ -26,4 +26,7 @@ class AppStrings {
   static const String orderHistory = "Order History";
   static const String searchYourBowOrders = "Search your bow-bow orders";
   static const String searchYourMeowOrders = "Search your Meow-Meow orders";
+  static const String sperator = "|";
+  static const String reorder = "Reorder";
+  static const rateOrder = "Rate Order";
 }
