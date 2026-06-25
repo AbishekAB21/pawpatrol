@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pawpatrol/common/resubale_products_section.dart';
 import 'package:pawpatrol/common/resusable_search_box.dart';
+import 'package:pawpatrol/common/reusable_pet_categories_section.dart';
 import 'package:pawpatrol/features/home%20screen/core/data/category_tab_data.dart';
 import 'package:pawpatrol/features/home%20screen/widgets/category_tab.dart';
 import 'package:pawpatrol/features/home%20screen/widgets/home_header_section.dart';
@@ -104,7 +105,7 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
                           children: [
-                            SizedBox(height: 20.0,),
+                            SizedBox(height: 20.0),
                             const ResubaleProductsSection(),
 
                             const SizedBox(height: 20),
@@ -113,13 +114,15 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
 
                             const SizedBox(height: 20),
 
-                            const ResubaleProductsSection(),
+                            // Popular Cat Products with sub categories
+                            ReusablePetCategoriesSection(),
 
                             const SizedBox(height: 20),
 
-                            const ResubaleProductsSection(),
+                            // Popular Dog Products with sub categories
+                            
 
-                            const SizedBox(height: 120),
+                            
                           ],
                         ),
                       ),
@@ -134,14 +137,16 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
               AnimatedBuilder(
                 animation: _scrollController,
                 builder: (context, _) {
-                  final offset =
-                      _scrollController.hasClients ? _scrollController.offset : 0.0;
-                  final barTop =
-                      (_headerHeight - offset).clamp(0.0, _headerHeight);
+                  final offset = _scrollController.hasClients
+                      ? _scrollController.offset
+                      : 0.0;
+                  final barTop = (_headerHeight - offset).clamp(
+                    0.0,
+                    _headerHeight,
+                  );
                   // 0 while sliding down with the header, ramps to 1
                   // as the bar reaches the top and becomes pinned.
-                  final progress =
-                      1 - (barTop / _headerHeight).clamp(0.0, 1.0);
+                  final progress = 1 - (barTop / _headerHeight).clamp(0.0, 1.0);
 
                   return Positioned(
                     top: barTop,

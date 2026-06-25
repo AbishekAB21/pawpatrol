@@ -32,6 +32,7 @@ class PinnedHeaderDelegate extends SliverPersistentHeaderDelegate {
         children: [
           if (overlapsContent)
             ClipRect(
+              
               child: BackdropFilter(
                 filter: ImageFilter.blur(
                   sigmaX: 35,
@@ -39,6 +40,7 @@ class PinnedHeaderDelegate extends SliverPersistentHeaderDelegate {
                 ),
                 child: Container(
                   color: Colors.transparent,
+                  decoration: BoxDecoration(),
                 ),
               ),
             ),

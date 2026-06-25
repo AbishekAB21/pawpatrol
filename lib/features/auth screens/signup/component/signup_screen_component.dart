@@ -89,8 +89,9 @@ class SignupScreenComponent extends StatelessWidget {
                             ),
                             child: Text(
                               "${AppStrings.signupTitle} ${AppStrings.signUpLinkTitle}",
-                              style: theme.textTheme.bodyLarge!.copyWith(
+                              style: theme.textTheme.bodyMedium!.copyWith(
                                 fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.onSurface
                               ),
                             ),
                           ),
@@ -133,8 +134,9 @@ class SignupScreenComponent extends StatelessWidget {
                             },
                             child: Text(
                               AppStrings.signInTitle,
-                              style: theme.textTheme.bodyLarge!.copyWith(
+                              style: theme.textTheme.bodyMedium!.copyWith(
                                 fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.onSurface
                               ),
                               textAlign: TextAlign.center,
                             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pawpatrol/core/bloc/bottom%20nav%20bar/bottom_nav_bloc.dart';
 import 'package:pawpatrol/routes/app_routes.dart';
 import 'package:pawpatrol/utils/theme/app_theme.dart';
 import 'package:pawpatrol/utils/theme/theme_cubit.dart';
@@ -15,8 +16,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ThemeCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => ThemeCubit(),),
+        BlocProvider(create: (context) => BottomNavBloc(),)
+      ],
+      
       child: BlocBuilder<ThemeCubit, AppThemeMode>(
         builder: (context, themeMode) {
           return MaterialApp.router(
