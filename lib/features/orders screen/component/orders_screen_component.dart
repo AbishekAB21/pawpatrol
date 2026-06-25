@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawpatrol/common/resusable_search_box.dart';
 import 'package:pawpatrol/core/constants/strings.dart';
+import 'package:pawpatrol/utils/theme/app_theme_extension.dart';
 
 class OrdersScreenComponent extends StatelessWidget {
   const OrdersScreenComponent({super.key});
@@ -8,6 +9,7 @@ class OrdersScreenComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final ext = theme.extension<AppThemeExtension>()!;
     return Scaffold(
       backgroundColor: theme.colorScheme.onSurface.withValues(alpha: 0.8),
 
@@ -57,6 +59,7 @@ class OrdersScreenComponent extends StatelessWidget {
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
+                  border: Border.all(color: ext.glassBorder, width: 2),
                   color: theme.colorScheme.onSurface,
                 ),
 
@@ -69,8 +72,9 @@ class OrdersScreenComponent extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Container(
-                              padding: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(12),
                               decoration: BoxDecoration(
+                                
                                 color: theme.colorScheme.primary.withValues(
                                   alpha: 0.4,
                                 ),
@@ -100,7 +104,7 @@ class OrdersScreenComponent extends StatelessWidget {
                                 Text(
                                   "2,292 ${AppStrings.interpunct} 3 Jul, 11:11 AM",
                                   style: theme.textTheme.bodySmall!.copyWith(
-                                    color: theme.colorScheme.surface,
+                                    color: theme.colorScheme.surface.withValues(alpha: 0.5),
                                   ),
                                 ),
                               ],
