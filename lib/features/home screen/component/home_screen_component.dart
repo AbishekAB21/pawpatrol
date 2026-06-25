@@ -114,15 +114,10 @@ class _HomeScreenComponentState extends State<HomeScreenComponent> {
 
                             const SizedBox(height: 20),
 
-                            // Popular Cat Products with sub categories
+                            // Popular Cat & Dog Products with sub categories
                             ReusablePetCategoriesSection(),
 
-                            const SizedBox(height: 20),
-
-                            // Popular Dog Products with sub categories
-                            
-
-                            
+                            const SizedBox(height: 120),
                           ],
                         ),
                       ),

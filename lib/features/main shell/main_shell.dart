@@ -50,13 +50,13 @@ class _GlassmorphicNavBarState extends State<_GlassmorphicNavBar> {
     AppRoutesPaths.profile,
   ];
 
-  static const _labels = ['All', 'Order Again', 'Wishlist', 'Profile'];
+  static const _labels = ['All', 'Orders', 'Wishlist', 'Profile'];
 
   static const _icons = [
-    Icons.home_rounded,
-    Icons.replay_rounded,
+    Icons.home_filled,
+    Icons.shopping_bag_rounded,
     Icons.favorite_rounded,
-    Icons.person_rounded,
+    Icons.pets,
   ];
 
   void _onTabTapped(BuildContext context, int index) {
@@ -140,7 +140,7 @@ class _GlassmorphicNavBarState extends State<_GlassmorphicNavBar> {
                                   _icons[index],
                                   size: 20,
                                   color: isSelected
-                                      ? theme.colorScheme.onSurface
+                                      ? theme.colorScheme.primary
                                       : theme.colorScheme.onSurface.withValues(
                                           alpha: 0.5,
                                         ),
@@ -152,7 +152,7 @@ class _GlassmorphicNavBarState extends State<_GlassmorphicNavBar> {
                                     color: isSelected
                                         ? theme.colorScheme.onSurface
                                         : theme.colorScheme.onSurface
-                                              .withValues(alpha: 0.5),
+                                              ,
                                     fontWeight: isSelected
                                         ? FontWeight.w700
                                         : FontWeight.w400,

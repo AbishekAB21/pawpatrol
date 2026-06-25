@@ -7,11 +7,15 @@ class ReusablePetCategoriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = PetCategoryData.categories;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: PetCategoryData.categories
-          .map((category) => _PetCategoryBlock(category: category))
-          .toList(),
+      children: [
+        for (int i = 0; i < categories.length; i++) ...[
+          _PetCategoryBlock(category: categories[i]),
+          if (i < categories.length - 1) const SizedBox(height: 16),
+        ]
+      ],
     );
   }
 }
@@ -42,11 +46,11 @@ class _PetCategoryBlock extends StatelessWidget {
         GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
             mainAxisSpacing: 12,
             crossAxisSpacing: 10,
-            // Fixed total cell height: 120px card + 6px gap + ~30px label
             mainAxisExtent: 156,
           ),
           itemCount: category.subCategories.length,
@@ -74,8 +78,9 @@ class _SubCategoryCard extends StatelessWidget {
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          // Fixed height container — every card is exactly the same size
           Container(
             height: 120,
             width: double.infinity,
@@ -105,7 +110,6 @@ class _SubCategoryCard extends StatelessWidget {
               ),
             ),
           ),
-
           const SizedBox(height: 6),
           Text(
             sub.name,
