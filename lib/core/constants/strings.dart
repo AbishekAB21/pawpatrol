@@ -28,5 +28,6 @@ class AppStrings {
   static const String searchYourMeowOrders = "Search your Meow-Meow orders";
   static const String sperator = "|";
   static const String reorder = "Reorder";
-  static const rateOrder = "Rate Order";
+  static const String rateOrder = "Rate Order";
+  static const String profile = "Profile";
 }
