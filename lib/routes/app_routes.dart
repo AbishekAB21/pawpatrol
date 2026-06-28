@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pawpatrol/features/auth%20screens/signin/container/signin_container.dart';
 import 'package:pawpatrol/features/auth%20screens/signup/container/signup_screen_container.dart';
+import 'package:pawpatrol/features/cart%20screen/container/cart_screen_container.dart';
 import 'package:pawpatrol/features/home%20screen/container/home_screen_container.dart';
 import 'package:pawpatrol/features/main%20shell/main_shell.dart';
 import 'package:pawpatrol/features/orders%20screen/container/order_screen_container.dart';
@@ -51,6 +52,12 @@ class AppRouter {
         path: AppRoutesPaths.signup,
         pageBuilder: (context, state) =>
             _fadePage(key: state.pageKey, child: const SignupScreenContainer()),
+      ),
+
+      GoRoute(
+        path: AppRoutesPaths.cart,
+        pageBuilder: (context, state) =>
+            _fadePage(key: state.pageKey, child: const CartScreenContainer()),
       ),
 
       // Shell wraps all main app tabs — nav bar stays alive across them

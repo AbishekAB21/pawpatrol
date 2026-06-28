@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pawpatrol/common/reusable_rounded_button.dart';
 import 'package:pawpatrol/features/home%20screen/widgets/header_profile_icon_section.dart';
+import 'package:pawpatrol/routes/app_route_paths.dart';
 
 class HomeHeaderSection extends StatelessWidget {
   final double opacity;
@@ -34,7 +36,9 @@ class HomeHeaderSection extends StatelessWidget {
                 ReusableRoundedButton(
                   icon: Icons.shopping_cart_rounded,
                   color: theme.colorScheme.onSurface,
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push(AppRoutesPaths.cart);
+                  },
                 ),
               ],
             ),

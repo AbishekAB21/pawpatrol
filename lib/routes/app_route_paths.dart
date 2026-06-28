@@ -15,4 +15,5 @@ class AppRoutesPaths {
   static const settings = '/settings';
   static const orders = '/orders';
   static const wishlist = '/wishlist';
+  static const cart = '/cart';
 }
