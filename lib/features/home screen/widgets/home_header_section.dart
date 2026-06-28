@@ -60,7 +60,7 @@ class HomeHeaderSection extends StatelessWidget {
                               .copyWith(
                                 color: theme.colorScheme.onSurface,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                                fontSize: 14,
                               ),
                         ),
 
@@ -70,7 +70,7 @@ class HomeHeaderSection extends StatelessWidget {
                               .copyWith(
                                 color: theme.colorScheme.onSurface,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                                fontSize: 14,
                               ),
                         ),
                       ],
