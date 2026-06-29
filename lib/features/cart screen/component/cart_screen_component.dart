@@ -219,10 +219,10 @@ class _LiquidGlassCheckoutBar extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(20, 14, 20, 14 + bottomPadding),
           decoration: BoxDecoration(
             // Very subtle white tint — keeps it glassy, not opaque
-            color: theme.colorScheme.onSurface.withValues(alpha: 0.08),
+            color: theme.colorScheme.onSurface.withValues(alpha: 0.01),
             border: Border(
               top: BorderSide(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.18),
+                color: theme.colorScheme.onSurface.withValues(alpha: 0.2),
                 width: 0.8,
               ),
             ),
